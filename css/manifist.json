@@ -1,0 +1,13 @@
+{
+"name": "DemoApp",
+  "description": "Demo",
+  "version": "0.1",
+  "app": {
+    "launch": {
+      "local_path": "***.html"
+    }
+  },
+  "permissions": [
+    "unlimitedStorage"
+  ]
+}

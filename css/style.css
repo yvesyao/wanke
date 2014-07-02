@@ -1,0 +1,375 @@
+body {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+	font-size: 14px;
+	background: #fff;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	overflow-y: hidden;
+	-webkit-transition: opacity 400ms;
+	-moz-transition: opacity 400ms;
+	transition: opacity 400ms;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
+	font-family: "微软雅黑",Helvetica,"Heiti SC",sans-serif;
+}
+hr {
+	border-bottom: 1px #aaa solid;
+}
+*[data-toggle="tooltip"] {
+	cursor: pointer;
+}
+.hide {
+	display: none !important;
+}
+#progress-nav {
+	position: fixed;
+	right: 1em;
+	top: 50%;
+	z-index: 15;
+	margin: 0;
+	padding: 0;
+}
+#progress-nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#progress-nav li {
+	display: block;
+	width: 1em;
+	height: 1em;
+	margin: 0.5em;
+}
+#progress-nav li a {
+	display: block;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	text-decoration: none;
+}
+#progress-nav li a .dot {
+	position: absolute;
+	z-index: 1;
+	top: 5px;
+	left: 5px;
+	width: 4px;
+	height: 4px;
+	background: #777;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+#progress-nav li.active a .dot {
+	top: 2px;
+	left: 2px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #777;
+	background: transparent;
+}
+#progress-nav li a .hover-text {
+	position: absolute;
+	top: -3px;
+	right: 12px;
+	padding-right: 0.6em;
+	width: 4.6em;
+	opacity: 0;
+	font-size: 1em;
+	color: #aaa;
+	text-align: right;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+#progress-nav li a:hover .hover-text {
+	opacity: 1;
+}
+
+#progress-nav .tooltip-arrow {
+	display: none;
+}
+#progress-nav .tooltip-inner {
+	margin-right: 1.5em;
+}
+#main {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	z-index: 10;
+	/* transition: transform 1s ease;
+	-moz-transition: -moz-transform 1s ease; Firefox 4
+	-webkit-transition: -webkit-transform 1s ease; Safari 和 Chrome
+	-o-transition: -o-transform 1s ease; Opera */
+}
+.slide {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 100%;
+	right: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 10;
+}
+.slide h1.title {
+	width: 100%;
+	text-align: center;
+	font-size: 5em;
+	color: #999;
+	text-shadow: 2px 2px 2px #666;
+}
+.slide:first-child {
+	top: 0;
+}
+.slide.active {
+	position: fixed;
+	z-index: 11;
+}
+/* div.center, p.center, img.center, table.center {
+margin-left: auto !important;
+margin-right: auto !important;
+float: none !important;
+display: block;
+} */
+.pt {
+	padding-top: 1em;
+}
+.mt {
+	margin-top: 2em;
+}
+.mt-20 {
+	margin-top: 20px;
+}
+.mb {
+	margin-bottom: 2em;
+}
+.mb-20 {
+	margin-bottom: 20px;
+}
+.clear {
+	clear: both;
+	width: 0;
+	height: 0;
+	padding: 0 !important;
+	margin: 0 !important
+}
+
+
+/* player */
+.player-button {
+	position: fixed;
+	right: 0.5em;
+	top: 0.5em;
+	opacity: .8;
+	z-index: 1000;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background: url(../imgs/player-button.png) -30px 0 no-repeat;
+}
+.player-button-stop {
+	background-position: 0 0;
+}
+
+/* slide */
+.slide img {
+	position: absolute;
+}
+
+.bg-form{width:320px;-webkit-animation:bgForm 6s infinite linear}
+.bg-top{position:absolute;top:0;left:0;width:100%;height:54px}
+.bg-top img{top:0;left:50%;margin-left:-160px;width:320px}
+
+.bg-pic{top:54px;left:0;width:100%;height:176px}
+.bg-title{top:78px;left:50%;margin-left:-145px}
+.bg-txt1{top:254px;left:50%;margin-left:-160px;width:320px}
+.bg-txt2{top:121px;left:50%;margin-left:-160px;width:320px}
+.bg-touch{bottom:10px;left:50%;margin-left:-145px;width:290px}
+@-webkit-keyframes bgForm{
+	0%{
+		-webkit-transform:translate(0,0) scale(1,1);
+	}
+	25%{
+		-webkit-transform:translate(-6px,-6px) scale(1.2,1.2);
+	}
+	50%{
+		-webkit-transform:translate(-3px,6px) scale(1.4,1.4);
+	}
+	75%{
+		-webkit-transform:translate(10px,10px) scale(1.2,1.2);
+	}
+	100%{
+		-webkit-transform:translate(0,0) scale(1,1);
+	}
+}
+.slide-left{opacity:0;-webkit-animation:slideLeft .9s ease-out forwards}
+@-webkit-keyframes slideLeft{
+	0%{
+		opacity:0;
+		-webkit-transform:translate(20px,0);
+	}
+	100%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}
+}
+.slide-up{opacity:0;-webkit-animation:slideUp .9s ease-out forwards}
+@-webkit-keyframes slideUp{
+	0%{
+		opacity:0;
+		-webkit-transform:translate(0,20px);
+	}
+	100%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}
+}
+.slide-dowm{opacity:0;-webkit-animation:slideDowm .9s ease-out forwards}
+@-webkit-keyframes slideDowm{
+	0%{
+		opacity:0;
+		-webkit-transform:translate(0,-20px);
+	}
+	100%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}
+}
+.tips-up {
+	opacity: .3;
+	bottom: 12px;
+	left: 50%;
+	margin-left: -11.5px;
+	width: 23px;
+	webkit-transform: translate(0,4px);
+	-webkit-animation: tipsUp 1.2s ease-in-out infinite;
+}
+.biger{-webkit-transform:scale(1,1);-webkit-animation:biger .7s linear alternate infinite;-webkit-animation-delay:.9s}
+@-webkit-keyframes biger{
+	0%{
+		-webkit-transform:scale(1,1);
+	}
+	100%{
+		-webkit-transform:scale(1.3,1.3);
+	}
+}
+.bg-show{opacity:0;-webkit-animation:bgShow .6s linear forwards}
+@-webkit-keyframes bgShow{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:1;
+	}
+}
+/* 01 */
+.triangle{opacity:0;-webkit-animation:triangle .9s ease-out forwards}
+@-webkit-keyframes triangle{
+	0%{
+		opacity:0;
+		-webkit-transform:translate(-20px,-20px);
+	}
+	100%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}
+}
+.tips-up{opacity:.3;bottom:12px;left:50%;margin-left:-11.5px;width:23px;webkit-transform:translate(0,4px);-webkit-animation:tipsUp 1.2s ease-in-out infinite }
+@-webkit-keyframes tipsUp{
+	0%{
+		opacity:0;
+		-webkit-transform:translate(0,5px);
+	}
+	50%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}
+	100%{
+		opacity:.3;
+		-webkit-transform:translate(0,-5px);
+	}
+}
+/* 02 */
+.icon-02{display:block;position:absolute;left:50%;width:16px;height:21px;background-image:url(../imgs/02-icon.png);background-size:80px auto}
+.icon-02-1{background-position:0 0;top:277px;margin-left:-78px}
+.icon-02-2{background-position:-16px 0;top:197px;margin-left:-53px}
+.icon-02-3{background-position:-32px 0;top:267px;margin-left:-49px}
+.icon-02-4{background-position:-48px 0;top:249px;margin-left:-22px}
+.icon-02-5{background-position:-64px 0;top:248px;margin-left:56px}
+/* 预约看房 */
+.order{display:none;position:absolute;top:42px;width:100%;font-size:18px;color:#e64a4b;line-height:20px;text-align:center}
+form{display:none;position:absolute;top:74px;left:50%;margin-left:-145px;width:290px;background:#fff;border-radius:2px;box-shadow:0 0 8px rgba(0,0,0,.08)}
+form fieldset{position:relative;border-bottom:1px solid #e7e7e7;height:36px}
+form fieldset:last-child{border-bottom:0}
+form fieldset label{position:absolute;top:0;left:0;width:79px;border-right:1px solid #f2edec;font-size:14px;color:#3b434b;line-height:36px;text-align:center}
+form fieldset input{float:right;background:none;padding:8px 10px;width:190px!important;height:20px;border:0;line-height:20px;font-size:14px;color:#8f9eb0}
+form fieldset select{float:right;padding:0 10px;width:210px;height:36px;background:url(../imgs/14-arrow.png) no-repeat 188px 14px;background-size:auto 8px;border:0;font-size:14px;color:#8f9eb0}
+.input-button{display:none;position:absolute;left:50%;margin-left:-145px;width:290px;border-radius:2px;font-size:15px;color:#fff;line-height:42px;text-align:center;text-shadow:0 2px 1px rgba(0,0,0,.2)}
+.input-button:active{color:#fff}
+
+.wit{position: absolute;
+	left: 0;
+	bottom: 12px;
+	text-align: center;
+	width: 100%;color:#666;
+}
+.wit a{color:#666;}
+.tel-link{position: absolute;left:46%;bottom:18px;width:88px;height:20px;}
+
+.PANO_spinner {
+	position:absolute;
+	left:50%;
+	top:50%;
+	width: 36px;
+	height:36px;
+	margin:-18px 0 0 -18px;
+	-webkit-animation: spin 1s linear 0s infinite;
+	-moz-animation: spin 1s linear 0s infinite;
+	-ms-animation: spin 1s linear 0s infinite;
+	-o-animation: spin 1s linear 0s infinite;
+	animation: spin 1s linear 0s infinite
+}
+@-webkit-keyframes spin {
+	from {
+		-webkit-transform: rotate(0deg)
+	}
+	to {
+		-webkit-transform: rotate(360deg)
+	}
+}
+@-moz-keyframes spin {
+	from {
+		-moz-transform: rotate(0deg)
+	}
+	to {
+		-moz-transform: rotate(360deg)
+	}
+}
+@-o-keyframes spin {
+	from {
+		-o-transform: rotate(0deg)
+	}
+	to {
+		-o-transform: rotate(360deg)
+	}
+}
+@keyframes spin {
+	from {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg)
+	}
+}
