@@ -59,10 +59,8 @@ window.$ && $(function() {
 			y = touch.pageY - startY;
 			if ($('.slide.active').length <= 0) {
 				var _next = scrollVals.curPage-y/Math.abs(y);
-				if (_next < 0 || _next > scrollVals.maxTop ) {
-					document.trigger('touchend');
-					return;
-				};
+				if (_next < 0 ) return;
+				if (_next > scrollVals.maxTop) {_next = 0};
 				scrollStart(_next, y < 0);
 			}
 			$(".slide.active").css('top', -$(window).height()*y/Math.abs(y) + y + 'px');
@@ -70,7 +68,7 @@ window.$ && $(function() {
 		document.addEventListener('touchend', function(event) {
 			startY = 0;
 			if (typeof(y) == "undefined" || y == 0) return;
-			if (Math.abs(y) < 30 || scrollVals.slideTop == 0 && y > 0)
+			if (Math.abs(y) < 30)
 				scrollToPage(scrollVals.slideTop);
 			else
 				scrollToPage(scrollVals.slideTop + y / Math.abs(y));
@@ -107,10 +105,9 @@ function scrollStart(nextPage, isNext){
 
 function scrollToPage(pageNum) {
 	if (!$(".slide.active").is(':animated')) {
+		if (pageNum > 0) {return};
 		scrollVals.slideTop = pageNum;
-		if (scrollVals.slideTop > 0) scrollVals.slideTop = 0;
-		if (scrollVals.slideTop < -scrollVals.maxTop) scrollVals.slideTop = -scrollVals.maxTop;
-		if (scrollVals.slideTop == scrollVals.curPage) return;
+		if (scrollVals.slideTop < -scrollVals.maxTop) scrollVals.slideTop = 0;
 		//if ($('.slide.cur-fixed').length <= 0) $('.slide').eq(scrollVals.curPage).addClass('cur-fixed').after('<section class="slide fake"></section>');
 		if ($('.slide.active').length <= 0) 
 			scrollStart(-scrollVals.slideTop, -pageNum > scrollVals.curPage);
