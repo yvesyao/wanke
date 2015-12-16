@@ -88,11 +88,16 @@ window.$ && $(function() {
 	});
 	$('#progress-nav').css('margin-top', -(scrollVals.maxTop + 1) * 1.5 / 2 + 'em');
 	$('#progress-nav ul li:eq(0)').addClass('active');
+	var start;
 	$('section.slide').bind('mousewheel', function(event, delta) {
 		/* Act on the event */
 		event.preventDefault();
-		scrollToPage(scrollVals.slideTop + delta);
+		var current = new Date().getTime();
+		if(current - start > 100) {
+			scrollToPage(scrollVals.slideTop + delta);
+		}
 		event.stopPropagation();
+		start = current;
 	});
 
 
